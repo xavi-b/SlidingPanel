@@ -5,7 +5,8 @@ namespace XB
 
 void SlidingPanel::keyPressEvent(QKeyEvent* event)
 {
-    if(event->key() == Qt::Key_Escape)
+    if(event->key() == Qt::Key_Escape
+    || (event->modifiers() & Qt::AltModifier && event->key() == Qt::Key_F4))
     {
         event->accept();
         this->slideUp();
@@ -27,7 +28,7 @@ void SlidingPanel::mousePressEvent(QMouseEvent* event)
 
 SlidingPanel::SlidingPanel(int width, QWidget* parent) : QFrame(parent)
 {
-    QGraphicsDropShadowEffect *effect = new QGraphicsDropShadowEffect(this);
+    QGraphicsDropShadowEffect* effect = new QGraphicsDropShadowEffect(this);
     effect->setOffset(0, 0);
     effect->setBlurRadius(10);
     effect->setColor(Qt::gray);

@@ -28,6 +28,7 @@ public:
 
     void setDuration(int duration);
     void setEasingCurve(QEasingCurve const& easingCurve);
+    void slideDown(int width);
     void slideDown();
     void slideUp();
 };

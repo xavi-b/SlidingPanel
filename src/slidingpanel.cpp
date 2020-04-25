@@ -51,6 +51,12 @@ void SlidingPanel::setEasingCurve(QEasingCurve const& easingCurve)
     this->easingCurve = easingCurve;
 }
 
+void SlidingPanel::slideDown(int width)
+{
+    this->setFixedWidth(width);
+    this->slideDown();
+}
+
 void SlidingPanel::slideDown()
 {
     if(this->isVisible())

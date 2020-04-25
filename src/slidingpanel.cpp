@@ -66,18 +66,18 @@ void SlidingPanel::slideDown()
     if(this->parentWidget())
     {
         int x = (this->parentWidget()->width() - this->width()) / 2;
-        int y = -this->height();
+        int y = -this->sizeHint().height();
         int w = this->width();
-        int h = this->height();
+        int h = this->sizeHint().height();
         this->setGeometry(x, y, w, h);
     }
     else
     {
         QScreen* screen = QApplication::primaryScreen();
         int x = (screen->size().width() - this->width()) / 2;
-        int y = -this->height();
+        int y = -this->sizeHint().height();
         int w = this->width();
-        int h = this->height();
+        int h = this->sizeHint().height();
         this->setGeometry(x, y, w, h);
     }
 
